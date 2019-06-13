@@ -5,6 +5,9 @@ services:
   influxdb:
     restart: always
     build: ./influxdb
+    ports:
+      - "8089/udp"
+      - "8086"
     volumes:
       - 'sense-data:/data'
   grafana:
