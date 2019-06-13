@@ -20,11 +20,3 @@ services:
         - 'GF_SESSION_PROVIDER=memory'
     depends_on:
       - influxdb
-  sensor:
-    build: ./sensor
-    privileged: true
-    restart: always
-    volumes:
-      - 'sense-data:/data'
-    depends_on:
-     - influxdb
